@@ -5,7 +5,6 @@ import com.medikids.medikids_osorio_backend.process.domain.Paciente;
 import com.medikids.medikids_osorio_backend.process.dto.PacienteDto;
 import com.medikids.medikids_osorio_backend.process.repository.PacienteRepository;
 import com.medikids.medikids_osorio_backend.utils.helper.PacienteHelper;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,6 @@ import java.util.Optional;
 
 @Service
 public class PacienteService {
-
     @Autowired
     private PacienteRepository pacienteRepository;
 
@@ -36,11 +34,9 @@ public class PacienteService {
     public PacienteDto update(int id, PacienteRequest paciente) {
         Optional<Paciente> pacienteUpdate = pacienteRepository.findById((long) id);
         if (pacienteUpdate.isPresent()) {
-            pacienteUpdate.get().setNombre(paciente.getNombre());
-            pacienteUpdate.get().setApellido(paciente.getApellido());
+            pacienteUpdate.get().setNombre_completo(paciente.getNombre_completo());
+            pacienteUpdate.get().setDni_menor(paciente.getDni_menor());
             pacienteUpdate.get().setFecha_nacimiento(paciente.getFecha_nacimiento());
-            pacienteUpdate.get().setSexo(paciente.getSexo());
-            pacienteUpdate.get().setDni(paciente.getDni());
             pacienteUpdate.get().setId_cliente(paciente.getId_cliente());
 
             return PacienteHelper.mapPaciente(

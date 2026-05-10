@@ -19,11 +19,9 @@ public class PacienteHelper implements Serializable {
     public static PacienteDto mapPaciente(Paciente paciente) {
         return PacienteDto.builder()
                 .id_paciente(paciente.getId_paciente())
-                .nombre(paciente.getNombre())
-                .apellido(paciente.getApellido())
+                .nombre_completo(paciente.getNombre_completo())
+                .dni_menor(paciente.getDni_menor())
                 .fecha_nacimiento(paciente.getFecha_nacimiento())
-                .sexo(paciente.getSexo())
-                .dni(paciente.getDni())
                 .id_cliente(paciente.getId_cliente())
                 .build();
     }
@@ -31,12 +29,11 @@ public class PacienteHelper implements Serializable {
     // Convierte un paciente "request" a "domain"
     public static Paciente buildPaciente(PacienteRequest paciente) {
         return Paciente.builder()
-                .id_cliente(paciente.getId_cliente())
-                .nombre(paciente.getNombre())
-                .apellido(paciente.getApellido())
+                .id_paciente(paciente.getId_paciente())
+                .nombre_completo(paciente.getNombre_completo())
+                .dni_menor(paciente.getDni_menor())
                 .fecha_nacimiento(paciente.getFecha_nacimiento())
-                .sexo(paciente.getSexo())
-                .dni(paciente.getDni())
+                .id_cliente(paciente.getId_cliente())
                 .build();
     }
 
@@ -45,11 +42,9 @@ public class PacienteHelper implements Serializable {
         return pacientes.stream()
                 .map(p -> PacienteDto.builder()
                         .id_paciente(p.getId_paciente())
-                        .nombre(p.getNombre())
-                        .apellido(p.getApellido())
+                        .nombre_completo(p.getNombre_completo())
+                        .dni_menor(p.getDni_menor())
                         .fecha_nacimiento(p.getFecha_nacimiento())
-                        .sexo(p.getSexo())
-                        .dni(p.getDni())
                         .id_cliente(p.getId_cliente())
                         .build())
                 .collect(Collectors.toList());
@@ -60,11 +55,9 @@ public class PacienteHelper implements Serializable {
         List<PacienteDto> pacientes = pacientePage.getContent().stream()
                 .map(p -> PacienteDto.builder()
                         .id_paciente(p.getId_paciente())
-                        .nombre(p.getNombre())
-                        .apellido(p.getApellido())
+                        .nombre_completo(p.getNombre_completo())
+                        .dni_menor(p.getDni_menor())
                         .fecha_nacimiento(p.getFecha_nacimiento())
-                        .sexo(p.getSexo())
-                        .dni(p.getDni())
                         .id_cliente(p.getId_cliente())
                         .build())
                 .collect(Collectors.toList());

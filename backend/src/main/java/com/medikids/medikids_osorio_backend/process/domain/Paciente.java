@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Getter
 @ToString
 @Builder
-@Table(name = "Paciente")
+@Table(name = "paciente")   // en minúscula, igual que la tabla en MySQL
 public class Paciente {
 
     @Id
@@ -20,21 +20,15 @@ public class Paciente {
     @Column(nullable = false)
     private int id_paciente;
 
-    @Column(nullable = false)
-    private String nombre;
+    @Column(name = "nombre_completo", nullable = false)
+    private String nombre_completo;
 
-    @Column(nullable = false)
-    private String apellido;
+    @Column(name = "dni_menor", nullable = false, unique = true)
+    private String dni_menor;
 
-    @Column(nullable = false)
+    @Column(name = "fecha_nacimiento", nullable = false)
     private LocalDate fecha_nacimiento;
 
-    @Column(nullable = false)
-    private String sexo;
-
-    @Column(nullable = false, unique = true)
-    private String dni;
-
-    @Column(nullable = false)
-    private int id_cliente; // relación con el apoderado
+    @Column(name = "id_cliente", nullable = false)
+    private int id_cliente;
 }
