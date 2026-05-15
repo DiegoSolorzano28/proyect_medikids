@@ -7,7 +7,7 @@ import com.medikids.medikids.expose.model.PacienteRequest;
 import com.medikids.medikids.process.domain.Paciente;
 import com.medikids.medikids.process.dto.PacienteDto;
 import com.medikids.medikids.process.repository.PacienteRepository;
-import com.medikids.medikids.utils.helper.PacienteHelper;
+import com.medikids.medikids.utils.helpers.PacienteHelper;
 
 import java.util.List;
 import java.util.Optional;

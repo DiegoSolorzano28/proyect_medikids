@@ -1,4 +1,4 @@
-package com.medikids.medikids.utils.helper;
+package com.medikids.medikids.utils.helpers;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
