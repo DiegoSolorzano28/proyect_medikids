@@ -18,6 +18,12 @@ public class Especialidad {
     @Column(nullable = false)
     private int id_especialidad;
 
+    @Column(nullable = false, length = 100)
+    private String nombre;
+
+    @Column(length = 255)
+    private String descripcion;
+}
     @Column(name = "nombre_especialidad", nullable = false, length = 100)
     private String nombre_especialidad;
 

@@ -1,6 +1,5 @@
-package com.medikids.medikids.process.dto;
+package com.medikids.medikids.expose.model;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,17 +7,16 @@ import java.io.Serializable;
 
 @Setter
 @Getter
-@Builder
-public class MedicoDto implements Serializable {
+public class MedicoConUsuarioRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private int id_medico;
-    private String nro_colegiatura;
-    private String url_foto;
-    private String estado;
-    private int id_usuario;
-    private int id_especialidad;
     private String nombres;
     private String apellidos;
     private String email;
+    private String password;
+    private int telefono;
+    private String nro_colegiatura;
+    private String url_foto;
+    private String estado;
+    private int id_especialidad;
 }
