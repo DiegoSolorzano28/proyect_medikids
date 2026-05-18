@@ -33,3 +33,8 @@ dist-ssr
 
 
 pnpm-lock.yaml
+
+# Environment variables – do NOT commit secrets
+.env
+.env.local
+.env.*.local
